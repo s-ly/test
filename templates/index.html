@@ -1,0 +1,21 @@
+<!-- 
+Главная страница.
+Наследуется от формы base.html
+Показывает данные из файла.
+Показывает форму ввода.
+При нажатии кнопки Послать, ведёт на text.html.
+method="post" - нужен для передачи данных формы.
+-->
+{% extends 'base.html' %}
+{% block body %}
+<h2>{{the_title}}</h2>
+<form method="post" action="/text">
+    <fieldset>
+        <legend>Форма</legend>
+        Информация<br>
+        {{the_text}}<br>
+        <input name="word" type="text" size="5">
+        <input type="submit" value="Послать">
+    </fieldset>
+</form>
+{% endblock %}
